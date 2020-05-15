@@ -4,7 +4,7 @@
 #
 Name     : R-fImport
 Version  : 3042.85
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/fImport_3042.85.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fImport_3042.85.tar.gz
 Summary  : Rmetrics - Importing Economic and Financial Data
@@ -15,7 +15,6 @@ Requires: R-timeSeries
 BuildRequires : R-timeDate
 BuildRequires : R-timeSeries
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 to download and manage data sets from the Internet or from other 
@@ -23,21 +22,22 @@ to download and manage data sets from the Internet or from other
 
 %prep
 %setup -q -c -n fImport
+cd %{_builddir}/fImport
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571829870
+export SOURCE_DATE_EPOCH=1589577465
 
 %install
-export SOURCE_DATE_EPOCH=1571829870
+export SOURCE_DATE_EPOCH=1589577465
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
