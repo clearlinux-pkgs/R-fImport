@@ -4,7 +4,7 @@
 #
 Name     : R-fImport
 Version  : 4021.86
-Release  : 35
+Release  : 36
 URL      : https://cran.r-project.org/src/contrib/fImport_4021.86.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fImport_4021.86.tar.gz
 Summary  : Rmetrics - Importing Economic and Financial Data
